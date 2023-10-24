@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+public class Main
+{
+    public static void main (String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i = 0; i<arr.length; i++)
+        {
+            arr[i] = sc.nextInt();
+        }  
+        System.out.println("Enter the value from where it has to be reverse");
+        int m = sc.nextInt();
+        m=m%n;
+        if(m<0)
+        {
+            m=m+n;
+        }
+        int x= n-m-1;
+        for(int i =0 ; i<=x;i++)
+        {
+            int swap = arr[i];
+            arr[i] = arr[x];
+            arr[x] = swap;
+            x--;
+        }
+        int y =n-1;
+        for(int i =n-m; i<=y; i++ )
+        {
+            int swap= arr[i];
+            arr[i]= arr[y];
+            arr[y]= swap;
+            y--;
+        }
+        int z = arr.length-1;
+        for(int i = 0; i<=z; i++)
+        {
+            int swap = arr[i];
+            arr[i]= arr[z];
+            arr[z]= swap;
+            z--;
+        }
+        for(int i =0; i< arr.length; i++)
+        {
+            System.out.println(arr[i]);
+        }
+     }
+    
+}
